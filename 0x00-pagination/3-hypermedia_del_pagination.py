@@ -65,5 +65,5 @@ class Server:
             'index': index,
             'data': data,
             'page_size': len(data),
-            'next_index': key
+            'next_index': key if key < len(self.__indexed_dataset) else None
         }
