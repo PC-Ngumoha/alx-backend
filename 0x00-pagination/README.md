@@ -19,6 +19,8 @@
 
 - A commonly used implementation of the _HATEOAS_ constraint is the _Hypertext Application Language_ or _HAL_. _HAL_ is a convention for defining hypermedia links to external resources within JSON and XML.
 
+- Deletion resilient hypermedia pagination is a form of hypermedia pagination that is widely used in the industry today. It is a practice which essentially involves the creation of pagination algorithms which upon receiving a request from the user will always return the correct number of pages from the correct starting point in the data regardless of whether certain parts of the data had been deleted prior to the request for data being made by the user.
+
 
 
 
