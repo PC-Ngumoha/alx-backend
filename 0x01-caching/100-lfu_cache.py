@@ -16,6 +16,8 @@ class LFUCache(BaseCaching):
         """
         super().__init__()
         self.frequency_count = {}
+        self.recency_count = {}
+        self.recency = 0
 
     def put(self, key, item):
         """
@@ -33,20 +35,30 @@ class LFUCache(BaseCaching):
                 self.frequency_count[key] += 1
             else:
                 if len(self.cache_data) + 1 > BaseCaching.MAX_ITEMS:
-                    keys_by_frequency = list(
-                        dict(
-                            sorted(
-                                self.frequency_count.items(),
-                                key=lambda x: x[1]
-                            )
-                          ).keys()
-                        )
-                    print(keys_by_frequency)
-                    lfu_item_key = keys_by_frequency[0]
-                    self.cache_data.pop(lfu_item_key)
-                    self.frequency_count.pop(lfu_item_key)
-                    print('DISCARD: {}'.format(lfu_item_key))
+                    min_freq = min(
+                        self.frequency_count.items(),
+                        key=lambda x: x[1]
+                      )[1]
+                    min_freq_keys = {k: v
+                                     for k, v in self.frequency_count.items()
+                                     if v == min_freq
+                                     }
+                    if len(min_freq_keys) > 1:
+                        lru_keys = {k: v
+                                    for k, v in self.recency_count.items()
+                                    if k in min_freq_keys
+                                    }
+                        key_to_pop = min(lru_keys.items(),
+                                         key=lambda x: x[1])[0]
+                    else:
+                        key_to_pop = list(min_freq_keys.keys())[0]
+                    self.cache_data.pop(key_to_pop)
+                    self.frequency_count.pop(key_to_pop)
+                    self.recency_count.pop(key_to_pop)
+                    print('DISCARD: {}'.format(key_to_pop))
                 self.frequency_count[key] = 0
+            self.recency += 1
+            self.recency_count[key] = self.recency
             self.cache_data[key] = item
 
     def get(self, key):
@@ -62,4 +74,6 @@ class LFUCache(BaseCaching):
         if key is None or key not in self.cache_data:
             return None
         self.frequency_count[key] += 1
+        self.recency += 1
+        self.recency_count[key] = self.recency
         return self.cache_data[key]
