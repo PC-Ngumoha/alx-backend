@@ -10,3 +10,5 @@
 - [The Flask Mega Tutorial part XIII: I18n & L10n](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n)
 
 - [Flask App Tutorial on Localization](https://phrase.com/blog/posts/python-localization-flask-applications/)
+
+- [Flask-Babel Documentation](https://python-babel.github.io/flask-babel/)
