@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def get_template_page() -> Response:
+def get_template_page() -> str:
     """
     get_template_page() route handler
     """
