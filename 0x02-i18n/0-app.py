@@ -4,7 +4,7 @@
 
 Basic flask app providing the template for the rest of the project
 """
-from flask import Flask, Response, render_template
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
