@@ -4,8 +4,9 @@
 
 Basic setup for internationalization using Flask-Babel
 """
+from datetime import datetime
 from flask import Flask, render_template, request, g
-from flask_babel import Babel
+from flask_babel import Babel, format_datetime
 from typing import Optional, Mapping, Union
 from pytz import timezone, UnknownTimeZoneError
 
@@ -95,8 +96,9 @@ def get_template_page() -> str:
     """
     get_template_page() route handler
     """
-    return render_template('7-index.html')
+    current_time = format_datetime(datetime.now())
+    return render_template('index.html', current_time=current_time)
 
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run(port=5001, debug=True)
