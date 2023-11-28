@@ -1,5 +1,5 @@
 /**
- * @module 1-redis_op.js
+ * @module 2-redis_op_async.js
  * 
  */
 import redis from 'redis';
