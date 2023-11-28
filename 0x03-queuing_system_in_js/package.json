@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec babel-node --presets @babel/preset-env"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.3",
+    "babel": "^6.23.0",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "redis": "^4.6.11"
+  }
+}
