@@ -21,3 +21,7 @@
 - [How to use Pub/Sub messaging pattern in Redis](https://www.freecodecamp.org/news/how-to-use-pub-sub-in-redis/)
 
 - [Redis Pub/Sub indepth explanation](https://redis.io/docs/interact/pubsub/)
+
+- [Kue: Job Queue for Node.js - Medium article](https://medium.com/@klogic/kue-job-queue-for-nodejs-24e034cac9a1)
+
+- [Kue: Queue Jobs with Node.js](https://jscrambler.com/blog/queue-jobs-with-kue)
