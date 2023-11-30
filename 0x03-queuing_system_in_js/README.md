@@ -25,3 +25,5 @@
 - [Kue: Job Queue for Node.js - Medium article](https://medium.com/@klogic/kue-job-queue-for-nodejs-24e034cac9a1)
 
 - [Kue: Queue Jobs with Node.js](https://jscrambler.com/blog/queue-jobs-with-kue)
+
+- [Using Node, Redis and Kue for Priority Job Processing](https://ifelse.io/2016/02/23/using-node-redis-and-kue-for-priority-job-processing/)
