@@ -51,6 +51,9 @@ const jobs = [
   }
 ];
 
+// BUG: Use of forEach array method could lead to a bug when dealing with truly
+// asynchronous code
+// TODO: Edit the code later on to use for...of loop from JS.
 jobs.forEach((jobData) => {
   const job = queue.create('push_notification_code_2', jobData).save((err) => {
     if (!err) console.log(`Notification job created: ${job.id}`);
