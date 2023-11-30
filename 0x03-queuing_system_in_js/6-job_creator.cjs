@@ -7,7 +7,7 @@ const queue = kue.createQueue();
 
 const job = queue.create('push_notification_code', {
   phoneNumber: '+2347089699162',
-  message: 'Simple message to work with',
+  message: 'This is my main phone number, you can use it to call me',
 });
 
 job.save(err => {
